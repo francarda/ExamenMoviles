@@ -36,7 +36,7 @@ public class HomeFragment extends Fragment {
 
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-        vm.getListaNotas().observe(getActivity(), new Observer<List<Nota>>() {
+        vm.getListaNotas().observe(getViewLifecycleOwner(), new Observer<List<Nota>>() {
             @Override
             public void onChanged(List<Nota> notas) {
                 rv= getActivity().findViewById(R.id.rvNotas);

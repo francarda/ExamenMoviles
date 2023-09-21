@@ -12,6 +12,7 @@ public class DetallesFragmentViewModel extends ViewModel {
 
 
     private MutableLiveData<Nota> nota = new MutableLiveData<>();
+    private MutableLiveData<String> mensaje= new MutableLiveData<>();
 
     public DetallesFragmentViewModel() {
 
@@ -20,19 +21,19 @@ public class DetallesFragmentViewModel extends ViewModel {
     public void recibirBundle(Bundle bundle){
         if (bundle != null) {
 
-            Nota notab = null;
+            String men= null;
             if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.TIRAMISU) {
-                notab = bundle.getSerializable("Nota", Nota.class);
+                men= bundle.getSerializable("Nota",String.class);
             }
 
             // Luego, puedes usar "nota" para configurar tus vistas o realizar otras acciones
-            if (notab != null) {
-              nota.setValue(notab);
+            if (men!= null) {
+              mensaje.setValue(men);
 
             }else{
-                notab=new Nota("--","Moviles", "Alumnos","detalles");
-
-                nota.setValue(notab);
+                //notab=new Nota("--","Moviles", "Alumnos","detalles");
+            men="no ha llegado";
+                mensaje.setValue(men);
             }
         }
 
@@ -44,6 +45,14 @@ public class DetallesFragmentViewModel extends ViewModel {
         }
 
         return nota;
+    }
+    public LiveData<String> getMen() {
+        if(mensaje==null){
+            mensaje = new MutableLiveData<>();
+            mensaje.setValue("mensaje");
+        }
+
+        return mensaje;
     }
     /*public void cagarLista(){
 

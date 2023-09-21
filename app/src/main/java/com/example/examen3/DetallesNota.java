@@ -67,6 +67,12 @@ public class DetallesNota extends Fragment {
                 binding.tvDetalleNombre.setText("Nombre del Alumno: "+ mNota.getAlummno()+"");
             }
         });
+        vm.getMen().observe(getActivity(), new Observer<String>() {
+            @Override
+            public void onChanged(String s) {
+                binding.tvDetalleNombre.setText("mensaje: "+ s);
+            }
+        });
         vm.recibirBundle(bn);
         return inflater.inflate(R.layout.fragment_detalles_nota, container, false);
     }

@@ -35,5 +35,9 @@
         android:id="@+id/detallesNota"
         android:name="com.example.examen3.DetallesNota"
         android:label="fragment_detalles_nota"
-        tools:layout="@layout/fragment_detalles_nota" />
+        tools:layout="@layout/fragment_detalles_nota" >
+        <action
+            android:id="@+id/action_detallesNota_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
 </navigation>
