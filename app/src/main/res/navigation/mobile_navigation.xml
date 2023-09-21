@@ -27,11 +27,6 @@
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
     <fragment
-        android:id="@+id/detallesFragment"
-        android:name="com.example.examen3.DetallesFragment"
-        android:label="fragment_detalles"
-        tools:layout="@layout/fragment_detalles" />
-    <fragment
         android:id="@+id/detallesNota"
         android:name="com.example.examen3.DetallesNota"
         android:label="fragment_detalles_nota"

@@ -56,7 +56,6 @@ public class NotaAdapter extends RecyclerView.Adapter<NotaAdapter.ViewHolder>{
         private TextView nota;
         private Nota notaCompleta= new Nota("","","","");
 
-
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
@@ -69,7 +68,7 @@ public class NotaAdapter extends RecyclerView.Adapter<NotaAdapter.ViewHolder>{
                 public void onClick(View view) {
                     Bundle bundle= new Bundle();
                     notaCompleta= new Nota("10","Mate","alguien","detalle");
-                    bundle.putSerializable("Nota", "hola");
+                    bundle.putSerializable("Nota", notaCompleta);
 
                     Navigation.findNavController(view).navigate(R.id.detallesNota, bundle);
 
